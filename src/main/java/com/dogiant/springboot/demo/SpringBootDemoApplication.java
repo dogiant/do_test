@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
-import com.dogiant.springboot.demo.domain.BlogPropeties;
+import com.dogiant.springboot.demo.config.BlogPropeties;
 
 @SpringBootApplication
 @ConfigurationProperties(prefix="application")

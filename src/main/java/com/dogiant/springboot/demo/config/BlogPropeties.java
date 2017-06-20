@@ -1,4 +1,4 @@
-package com.dogiant.springboot.demo.domain;
+package com.dogiant.springboot.demo.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
