@@ -20,6 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dogiant.springboot.demo.domain.User;
 
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping(value="/users") 
 public class UserController {
@@ -49,6 +52,8 @@ public class UserController {
         return "success"; 
     } 
  
+    @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
     @RequestMapping(value="/{id}", method=RequestMethod.GET) 
     public User getUser(@PathVariable Long id) { 
         // 处理"/users/{id}"的GET请求，用来获取url中id值的User信息 
