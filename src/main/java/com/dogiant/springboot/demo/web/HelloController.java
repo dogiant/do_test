@@ -27,5 +27,9 @@ public class HelloController {
 		return "hello " + blogPropeties.getName() +","+blogPropeties.getDesc();
 	}
 	
+	@RequestMapping(value = "/ex", method = RequestMethod.GET)
+	public String exception() throws Exception{
+		throw new Exception("发生错误");
+	}
 
 }

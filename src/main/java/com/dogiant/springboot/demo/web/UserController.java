@@ -9,16 +9,15 @@ import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.boot.json.GsonJsonParser;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.dogiant.springboot.demo.domain.User;
+import com.dogiant.springboot.demo.exception.CommException;
+import com.dogiant.springboot.demo.exception.ServiceExInfo;
 
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -79,5 +78,10 @@ public class UserController {
         users.remove(id); 
         return "success"; 
     } 
+    
+    @RequestMapping("/json")
+    public String json() throws CommException {
+        throw new CommException(ServiceExInfo.NO_AUTH_EXCEPTION);
+    }
  
 }
